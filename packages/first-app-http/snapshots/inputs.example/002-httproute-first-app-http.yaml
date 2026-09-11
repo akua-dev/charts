@@ -1,0 +1,18 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: first-app-http
+  labels:
+    app.kubernetes.io/name: first-app-http
+    app.kubernetes.io/part-of: first-app
+  annotations:
+    routing.akua.dev/output-name: main
+    routing.akua.dev/output-protocol: http
+spec:
+  useDefaultGateways: All
+  hostnames:
+  - first-app.example.test
+  rules:
+  - backendRefs:
+    - name: first-app-http
+      port: 80

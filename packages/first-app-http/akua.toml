@@ -1,0 +1,4 @@
+[package]
+name = "first-app-http"
+version = "0.1.0"
+edition = "akua.dev/v1alpha1"
